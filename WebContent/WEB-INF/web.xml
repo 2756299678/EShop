@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>webday3</display-name>
+<!--  商品分类管理 -->
+<servlet>
+	<servlet-name>ProductTypeServlet</servlet-name>
+	<servlet-class>com.oracle.jsp.servlet.admin.ProductTypeServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ProductTypeServlet</servlet-name>
+	<url-pattern>/admin/product/type/productTypeServlet</url-pattern>
+</servlet-mapping>
+<!-- 商品属性 -->
+<servlet>
+	<servlet-name>ProductPropertyServlet</servlet-name>
+	<servlet-class>com.oracle.jsp.servlet.admin.ProductPropertyServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProductPropertyServlet</servlet-name>
+<url-pattern>/admin/product/property/productPropertyServlet</url-pattern>
+</servlet-mapping>
+<!-- 商品属性选项 -->
+<servlet>
+<servlet-name>ProductOptionServlet</servlet-name>
+<servlet-class>com.oracle.jsp.servlet.admin.ProductOptionServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProductOptionServlet</servlet-name>
+<url-pattern>/admin/product/option/productOptionServlet</url-pattern>
+</servlet-mapping>
+<!-- 商品管理 -->
+<servlet>
+<servlet-name>ProductServlet</servlet-name>
+<servlet-class>com.oracle.jsp.servlet.admin.ProductServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ProductServlet</servlet-name>
+<url-pattern>/admin/product/productServlet</url-pattern>
+</servlet-mapping>
+<!--```````````````````````````````````````  -->
+<servlet>
+	<servlet-name>InitServlet</servlet-name>
+<servlet-class>com.oracle.jsp.servlet.admin.InitServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+<!-- 用户 -->
+<servlet>
+	<servlet-name>UserServlet</servlet-name>
+	<servlet-class>com.oracle.jsp.servlet.front.UserServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>UserServlet</servlet-name>
+<url-pattern>/front/user/userServlet</url-pattern>
+</servlet-mapping>
+<!-- 收货地址管理 -->
+<servlet>
+	<servlet-name>AddressServlet</servlet-name>
+	<servlet-class>com.oracle.jsp.servlet.front.AddressServlet</servlet-class>
+</servlet>
+	<servlet-mapping>
+	<servlet-name>AddressServlet</servlet-name>
+	<url-pattern>/front/user/addressServlet</url-pattern>
+</servlet-mapping>
+
+<!-- 用户管理 -->
+<servlet>
+<servlet-name>userServlet</servlet-name>
+<servlet-class>com.oracle.jsp.servlet.admin.UserServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>userServlet</servlet-name>
+<url-pattern>/admin/userServlet</url-pattern>
+</servlet-mapping>
+
+
+<!-- 用户订单管理 -->
+<servlet>
+<servlet-name>OrderServlet</servlet-name>
+<servlet-class>com.oracle.jsp.servlet.admin.OrderServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>OrderServlet</servlet-name>
+<url-pattern>/admin/userOrderServlet</url-pattern>
+</servlet-mapping>
+
+<!-- 商品展示 -->
+	<servlet>
+	<servlet-name>productShow</servlet-name>
+	<servlet-class>com.oracle.jsp.servlet.front.ProductShowServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>productShow</servlet-name>
+	<url-pattern>/front/productShow/productShowServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 购物流程 -->
+	<servlet>
+	<servlet-name>shopping</servlet-name>
+	<servlet-class>com.oracle.jsp.servlet.front.ShoppingServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>shopping</servlet-name>
+	<url-pattern>/front/shopping/shoppingServlet</url-pattern>
+	</servlet-mapping>
+<!-- 这是分割线 -->
+ 	<servlet>
+        <!-- servlet-name的值是自定义的，该值要和<servlet-mapping>中的servlet-name的值保持一致 -->
+        <servlet-name>AdminServlet</servlet-name>
+        <!-- 配置的servlet的类完全限定名 -->
+        <servlet-class>com.oracle.jsp.servlet.admin.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <!-- 访问servlet路径 ,以/开头-->
+        <url-pattern>/admin/adminServlet</url-pattern>
+    </servlet-mapping>
+    
+<!-- 
+管理员的过滤器
+<filter>
+	<filter-name>adminFilter</filter-name>
+	<filter-class>com.oracle.jsp.filter.AdminFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>adminFilter</filter-name>
+	<url-pattern>/admin/*</url-pattern>
+</filter-mapping>
+用户的过滤器
+<filter>
+	<filter-name>userFilter</filter-name>
+	<filter-class>com.oracle.jsp.filter.UserFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>userFilter</filter-name>
+	<url-pattern>/front/*</url-pattern>
+</filter-mapping> -->
+
+<!-- 这是分割线 -->
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>admin/login.jsp</welcome-file>
+    <welcome-file>index3.jsp</welcome-file>
+    <welcome-file>index4.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
